@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X-O Online</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="login">
+      <h1>Enter player names</h1>
+      <div class="log">
+        <input type="text" placeholder="Player 1 (X)" />
+        <input type="text" placeholder="Player 2 (O)" />
+        <button id="submit">START</button>
+      </div>
+    </div>
+    <div class="container" style="display: none">
+      <div class="players" style="display: none">
+        <div class="player">
+          <span id="name"></span> <button id="tryagain">Try again!</button>
+        </div>
+      </div>
+
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
