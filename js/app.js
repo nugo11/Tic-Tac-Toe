@@ -7,8 +7,8 @@ let again = document.getElementById("tryagain");
 
 for (let i = 0; i < box.length; i++) {
   box[i].addEventListener("click", () => {
-    if (box[i].innerHTML === "") {
-      box[i].innerHTML = `<b>${currentPlayer}</b>`;
+    if (box[i].value === "") {
+      box[i].value = `${currentPlayer}`;
       currentPlayer = currentPlayer === "X" ? "O" : "X";
     }
     chackWinner();
@@ -17,7 +17,7 @@ for (let i = 0; i < box.length; i++) {
 
 again.addEventListener("click", () => {
   for (let a = 0; a < 9; a++) {
-    box[a].innerHTML = "";
+    box[a].value = "";
     document.getElementById("name").innerText = ``;
     document.querySelector(".players").style.display = "none";
   }
@@ -25,66 +25,53 @@ again.addEventListener("click", () => {
 
 function chackWinner() {
   let box = document.getElementsByClassName("box");
-  let X = "<b>X</b>";
-  let O = "<b>O</b>";
+  let X = "X";
+  let O = "O";
   if (
-    (box[0].innerHTML === X &&
-      box[1].innerHTML === X &&
-      box[2].innerHTML === X) ||
-    (box[0].innerHTML === X &&
-      box[3].innerHTML === X &&
-      box[6].innerHTML === X) ||
-    (box[0].innerHTML === X &&
-      box[4].innerHTML === X &&
-      box[8].innerHTML === X) ||
-    (box[2].innerHTML === X &&
-      box[4].innerHTML === X &&
-      box[6].innerHTML === X) ||
-    (box[1].innerHTML === X &&
-      box[4].innerHTML === X &&
-      box[7].innerHTML === X) ||
-    (box[2].innerHTML === X &&
-      box[5].innerHTML === X &&
-      box[8].innerHTML === X) ||
-    (box[3].innerHTML === X &&
-      box[4].innerHTML === X &&
-      box[5].innerHTML === X) ||
-    (box[6].innerHTML === X && box[7].innerHTML === X && box[8].innerHTML === X)
+    (box[0].value === X || box[0].value === O) &&
+    (box[1].value === X || box[1].value === O) &&
+    (box[2].value === X || box[2].value === O) &&
+    (box[3].value === X || box[3].value === O) &&
+    (box[4].value === X || box[4].value === O) &&
+    (box[5].value === X || box[5].value === O) &&
+    (box[6].value === X || box[6].value === O) &&
+    (box[7].value === X || box[7].value === O) &&
+    (box[8].value === X || box[8].value === O)
+  ) {
+    document.getElementById(
+      "name"
+    ).innerText = `A draw!`;
+    document.querySelector(".players").removeAttribute("style");
+  } else if (
+    (box[0].value === X && box[1].value === X && box[2].value === X) ||
+    (box[0].value === X && box[3].value === X && box[6].value === X) ||
+    (box[0].value === X && box[4].value === X && box[8].value === X) ||
+    (box[2].value === X && box[4].value === X && box[6].value === X) ||
+    (box[1].value === X && box[4].value === X && box[7].value === X) ||
+    (box[2].value === X && box[5].value === X && box[8].value === X) ||
+    (box[3].value === X && box[4].value === X && box[5].value === X) ||
+    (box[6].value === X && box[7].value === X && box[8].value === X)
   ) {
     document.getElementById(
       "name"
     ).innerText = `Congratulations ${player1.value}, you won`;
     document.querySelector(".players").removeAttribute("style");
-  }
-  if (
-    (box[0].innerHTML === O &&
-      box[1].innerHTML === O &&
-      box[2].innerHTML === O) ||
-    (box[0].innerHTML === O &&
-      box[3].innerHTML === O &&
-      box[6].innerHTML === O) ||
-    (box[0].innerHTML === O &&
-      box[4].innerHTML === O &&
-      box[8].innerHTML === O) ||
-    (box[2].innerHTML === O &&
-      box[4].innerHTML === O &&
-      box[6].innerHTML === O) ||
-    (box[1].innerHTML === O &&
-      box[4].innerHTML === O &&
-      box[7].innerHTML === O) ||
-    (box[2].innerHTML === O &&
-      box[5].innerHTML === O &&
-      box[8].innerHTML === O) ||
-    (box[3].innerHTML === O &&
-      box[4].innerHTML === O &&
-      box[5].innerHTML === O) ||
-    (box[6].innerHTML === O && box[7].innerHTML === O && box[8].innerHTML === O)
+  } else if (
+    (box[0].value === O && box[1].value === O && box[2].value === O) ||
+    (box[0].value === O && box[3].value === O && box[6].value === O) ||
+    (box[0].value === O && box[4].value === O && box[8].value === O) ||
+    (box[2].value === O && box[4].value === O && box[6].value === O) ||
+    (box[1].value === O && box[4].value === O && box[7].value === O) ||
+    (box[2].value === O && box[5].value === O && box[8].value === O) ||
+    (box[3].value === O && box[4].value === O && box[5].value === O) ||
+    (box[6].value === O && box[7].value === O && box[8].value === O)
   ) {
     document.getElementById(
       "name"
     ).innerText = `Congratulations ${player2.value}, you won`;
     document.querySelector(".players").removeAttribute("style");
   }
+  
 }
 
 submit.addEventListener("click", () => {
