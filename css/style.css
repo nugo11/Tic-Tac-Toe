@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Sevillana", cursive;
+}
+
+html,body{
   -webkit-overflow-scrolling : touch !important;
   overflow: auto !important;
 }

@@ -110,4 +110,3 @@ player2.addEventListener("keypress", (event) => {
     }
   }
 });
-
