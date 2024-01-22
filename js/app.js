@@ -108,4 +108,8 @@ player2.addEventListener("keypress", (event) => {
   }
 });
 
-setTimeout(() => window.scrollTo(0, 100), 50);
+document.addEventListener('scroll', (e) => {
+  if (scrollLock && document.documentElement.scrollTop > 100) {
+      document.documentElement.scrollTop = 100;
+  }
+});
