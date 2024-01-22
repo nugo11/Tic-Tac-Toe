@@ -54,7 +54,7 @@ function chackWinner() {
   ) {
     document.getElementById(
       "name"
-    ).innerText = `Congratulations ${player1.innerHTML}, you won`;
+    ).innerText = `Congratulations ${player1.value}, you won`;
     document.querySelector(".players").removeAttribute("style");
   } else if (
     (box[0].innerHTML === O && box[1].innerHTML === O && box[2].innerHTML === O) ||
@@ -68,7 +68,7 @@ function chackWinner() {
   ) {
     document.getElementById(
       "name"
-    ).innerText = `Congratulations ${player2.innerHTML}, you won`;
+    ).innerText = `Congratulations ${player2.value}, you won`;
     document.querySelector(".players").removeAttribute("style");
   }
   
