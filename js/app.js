@@ -9,7 +9,7 @@ for (let i = 0; i < box.length; i++) {
   box[i].addEventListener("click", () => {
     if (box[i].innerHTML === "") {
       box[i].innerHTML = `${currentPlayer}`;
-      currentPlayer = currentPlayer === "<b>X</b>" ? "<b>O</b>" : "<git>X</git ab>";
+      currentPlayer = currentPlayer === "<b>X</b>" ? "<b>O</b>" : "<b>X</b>";
     }
     chackWinner();
   });
