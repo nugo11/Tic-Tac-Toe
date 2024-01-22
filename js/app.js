@@ -83,7 +83,15 @@ submit.addEventListener("click", () => {
     document.querySelector(".login").style.display = "none";
     document.querySelector(".container").removeAttribute("style");
   }
+
+  setTimeout(() => {
+    scrollToTop();
+  }, "500");
 });
+
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
 
 player1.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
