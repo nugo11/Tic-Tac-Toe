@@ -53,11 +53,6 @@ html {
   cursor: default;
 }
 
-.container input {
-  color: white;
-  text-align: center;
-  font-size: 50px;
-}
 
 .box b {
   position: absolute;
