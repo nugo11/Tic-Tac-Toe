@@ -38,7 +38,9 @@ function chackWinner() {
     (box[7].value === X || box[7].value === O) &&
     (box[8].value === X || box[8].value === O)
   ) {
-    document.getElementById("name").innerText = `A draw!`;
+    document.getElementById(
+      "name"
+    ).innerText = `A draw!`;
     document.querySelector(".players").removeAttribute("style");
   } else if (
     (box[0].value === X && box[1].value === X && box[2].value === X) ||
@@ -69,6 +71,7 @@ function chackWinner() {
     ).innerText = `Congratulations ${player2.value}, you won`;
     document.querySelector(".players").removeAttribute("style");
   }
+  
 }
 
 submit.addEventListener("click", () => {
@@ -105,11 +108,5 @@ player2.addEventListener("keypress", (event) => {
       document.querySelector(".login").style.display = "none";
       document.querySelector(".container").removeAttribute("style");
     }
-  }
-});
-
-document.addEventListener('scroll', (e) => {
-  if (scrollLock && document.documentElement.scrollTop > 100) {
-      document.documentElement.scrollTop = 100;
   }
 });
